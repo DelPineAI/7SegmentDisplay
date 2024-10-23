@@ -4,12 +4,6 @@
 
 This project demonstrates the use of Boolean algebra to control a 7-segment alphanumeric display. The goal is to determine which segments should light up to display specific characters, using only Boolean logic derived from truth tables and Karnaugh maps (K-maps). The design was implemented on a Basys 3 FPGA board using Vivado software, but the Boolean logic can be applied to other platforms, including simulations or homemade circuits using LEDs and switches.
 
-### Key Concepts:
-- **Boolean Algebra**: Handcrafted Boolean expressions are used to determine the activation of each segment based on input bits.
-- **Karnaugh Map Optimization**: Used to simplify the Boolean expressions for each segment of the display.
-- **FPGA Implementation**: The design was implemented and programmed on a Basys 3 FPGA using Vivado.
-- **DIY Alternative**: This logic can be replicated at home with simple circuits using LEDs and switches.
-
 ## How It Works
 
 ### Input/Output Logic
