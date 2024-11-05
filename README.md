@@ -28,9 +28,11 @@ For each segment (a-g), a Boolean expression was derived using K-maps to minimiz
 
 2. **Karnaugh Map**:
 
-S(1)\S(0) | 0 | 1
-   0     |  1  |  0   
-   1     |  1  |  1   
+| S(1) \ S(0) | 0 | 1 |
+|-------------|---|---|
+| **0**       | 1 | 0 |
+| **1**       | 1 | 1 |
+
 
 The Boolean expression for `a` after K-map simplification:  
 `a = S(1) OR NOT S(0)`
@@ -63,10 +65,13 @@ Port ( S : in  STD_LOGIC_VECTOR (1 downto 0);
        g : out STD_LOGIC);
 end final_epic;
 
-architecture Behavioral of final_epic is
-begin
+```
 
 ### Boolean Expressions for Each Segment
+
+```vhdl
+architecture Behavioral of final_epic is
+begin
 
 - `a = S(0) AND NOT S(1)`
 - `b = S(0) XOR S(1)`
@@ -77,11 +82,14 @@ begin
 - `g = (S(0) AND NOT S(1)) OR (S(1) AND S(0))`
 
 end Behavioral;
+```
 
-#Constraints
+### Constraints:
+
 To map the logic to the Basys 3 board, the following constraints were used:
 
-#7-Segment Display Constraints
+**\#\#7 Segment Display**:
+```vhdl
 set_property PACKAGE_PIN W7 [get_ports {a}]
 set_property IOSTANDARD LVCMOS33 [get_ports {a}]
 set_property PACKAGE_PIN W6 [get_ports {b}]
@@ -96,8 +104,10 @@ set_property PACKAGE_PIN V5 [get_ports {f}]
 set_property IOSTANDARD LVCMOS33 [get_ports {f}]
 set_property PACKAGE_PIN U7 [get_ports {g}]
 set_property IOSTANDARD LVCMOS33 [get_ports {g}]
+```
 
-#Switch Constraints
+**\#\#Switches**:
+```vhdl
 set_property PACKAGE_PIN V17 [get_ports {S[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {S[1]}]
 set_property PACKAGE_PIN V16 [get_ports {S[0]}]
@@ -123,10 +133,18 @@ If you don't have access to a Basys 3 FPGA, you can still experiment with this p
 - 7 LEDs (for segments `a`-`g`)
 - 2 switches (for inputs `S(0)` and `S(1)`)
 - Logic gates (AND, OR, NOT, XOR)
-- Breadboard and jumper wires
+- Breadboard and wires
 
 ## Conclusion
 
 This project illustrates how Boolean algebra can be applied to control a 7-segment display. By optimizing the logic with Karnaugh maps and implementing the design on an FPGA, we can efficiently control the segments to display characters. This method can be extended to other projects and replicated using simple hardware for learning purposes.
 
+## Author
 
+**Edward Del Pino**
+
+*June 2024*
+
+- [LinkedIn](https://www.linkedin.com/in/edward-del-pino)
+- [GitHub](https://github.com/DelPineAI)
+- [Instagram](https://www.instagram.com/edwarddelpiiino/)
